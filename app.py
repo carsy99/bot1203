@@ -42,14 +42,7 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = text=event.message.text
-    if re.match('告訴我秘密',message):
-        audio_message = AudioSendMessage(
-            original_content_url='https://campus-studio.com/download/twsong.mp3',
-            duration=81000
-        )
-        line_bot_api.reply_message(event.reply_token, audio_message)
-    else:
+    message = TextSendMassage(text=event.massage.text)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 #主程式
 import os
