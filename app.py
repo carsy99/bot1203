@@ -59,7 +59,7 @@ def handle_message(event):
     else:
         reply = TextSendMessage(text="很抱歉，我目前無法理解這個內容。")
 
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply))
+    line_bot_api.reply_message(event.reply_token,reply)
     
 #主程式
 import os
