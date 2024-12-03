@@ -10,6 +10,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from datetime import datetime
+import pytz
 from linebot.models import *
 import re
 app = Flask(__name__)
@@ -20,6 +21,7 @@ line_bot_api = LineBotApi('47Teua1VI1VEw5MKyDF7YEOrJzmMQfsxhpIeWNIl0wza8DUinGMjT
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('3474514a3503e0611336ad0b8de26e50')
 
+tz = pytz.timezone('Asia/Taipei')
 current_time = datetime.now().strftime("%Y/%m/%d %H:%M")
 line_bot_api.push_message('U6773b925616e46b96db121f79eb2e76d', TextSendMessage(text=f'您好，目前時間是 {current_time} ，請問需要什麼服務呢?'))
 
