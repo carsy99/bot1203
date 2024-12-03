@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 # 必須放上自己的Channel Access Token
 line_bot_api = LineBotApi('47Teua1VI1VEw5MKyDF7YEOrJzmMQfsxhpIeWNIl0wza8DUinGMjTfiHO3prD9jdZfj5M8vOJp2tqJkp2sJ4o0A2IDEpBqTeaY57rDl0cRz2FXfQ58yiN6kBgwQSu4qS6hbKxI3TheYLlJFfUDXWJgdB04t89/1O/w1cDnyilFU=')
+
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('3474514a3503e0611336ad0b8de26e50')
 
@@ -42,9 +43,9 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    user_message = event.message.text
-    message = TextSendMassage(text=event.massage.text)
+    message = TextSendMessage(text=event.message.text)
     line_bot_api.reply_message(event.reply_token,message)
+    
 #主程式
 import os
 if __name__ == "__main__":
