@@ -49,7 +49,7 @@ def callback():
 def handle_message(event):
     user_message = event.message.text
     if user_message == "天氣":
-        reply = "請稍等，我幫您查詢天氣資訊！"
+        reply = TextSendMessage(text="請稍等，我幫您查詢天氣資訊！")
     
     elif user_message == "心情好":   # 傳送高興心情的貼圖
         reply = StickerSendMessage(package_id='446', sticker_id='1989')  # 開心貼圖
@@ -57,7 +57,7 @@ def handle_message(event):
         reply = StickerSendMessage(package_id='446', sticker_id='2008')  # 哭泣貼圖
     
     else:
-        reply = "很抱歉，我目前無法理解這個內容。"
+        reply = TextSendMessage(text="很抱歉，我目前無法理解這個內容。")
 
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply))
     
