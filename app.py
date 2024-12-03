@@ -19,7 +19,8 @@ line_bot_api = LineBotApi('47Teua1VI1VEw5MKyDF7YEOrJzmMQfsxhpIeWNIl0wza8DUinGMjT
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('3474514a3503e0611336ad0b8de26e50')
 
-line_bot_api.push_message('U6773b925616e46b96db121f79eb2e76d', TextSendMessage(text='你可以開始了'))
+current_time = datetime.now().strftime("%Y/%m/%d %H:%M")
+line_bot_api.push_message('U6773b925616e46b96db121f79eb2e76d', TextSendMessage(text=f'您好，目前時間是 {current_time} ，請問需要什麼服務呢?'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -43,8 +44,12 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-    line_bot_api.reply_message(event.reply_token,message)
+    if user_message == "天氣":
+        reply = "請稍等，我幫您查詢天氣資訊！"
+    else:
+        reply = "很抱歉，我目前無法理解這個內容。"
+
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply))
     
 #主程式
 import os
