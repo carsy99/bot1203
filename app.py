@@ -50,6 +50,12 @@ def handle_message(event):
     user_message = event.message.text
     if user_message == "天氣":
         reply = "請稍等，我幫您查詢天氣資訊！"
+    
+    elif user_message == "心情好":   # 傳送高興心情的貼圖
+        reply = StickerSendMessage(package_id='11537', sticker_id='52002735')  # 微笑貼圖
+    elif user_message == "心情不好": # 傳送傷心心情的貼圖
+        reply = StickerSendMessage(package_id='11537', sticker_id='52002752')  # 哭泣貼圖
+    
     else:
         reply = "很抱歉，我目前無法理解這個內容。"
 
