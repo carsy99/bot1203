@@ -9,6 +9,7 @@ from linebot import (
 from linebot.exceptions import (
     InvalidSignatureError
 )
+from datetime import datetime
 from linebot.models import *
 import re
 app = Flask(__name__)
@@ -44,6 +45,7 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    user_message = event.message.text
     if user_message == "天氣":
         reply = "請稍等，我幫您查詢天氣資訊！"
     else:
