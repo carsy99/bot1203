@@ -55,7 +55,22 @@ def handle_message(event):
         reply = StickerSendMessage(package_id='446', sticker_id='1989')  # 開心貼圖
     elif user_message == "心情不好": # 傳送傷心心情的貼圖
         reply = StickerSendMessage(package_id='446', sticker_id='2008')  # 哭泣貼圖
-    
+
+    elif user_message == "找美食":  # 傳送餐廳位置
+        reply = LocationSendMessage(
+            title="著名餐廳",
+            address="433台中市沙鹿區英才路28-1號",
+            latitude=24.2265806,
+            longitude=120.5741573
+        )
+    elif user_message == "找景點":  # 傳送景點位置
+        reply = LocationSendMessage(
+            title="熱門景點",
+            address="台北101大樓",
+            latitude=25.033976,
+            longitude=121.564538
+        )
+        
     else:
         reply = TextSendMessage(text="很抱歉，我目前無法理解這個內容。")
 
