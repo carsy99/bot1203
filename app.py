@@ -106,9 +106,25 @@ def handle_message(event):
         )
         text_message = TextSendMessage(text="生日快樂！希望你有個美好的一天 🎉🎂")
         reply = [image_message, text_message]
+
+      
     
     else:
-        reply = TextSendMessage(text="抱歉，沒有這類型的影片。")
+        # 定義一組貼圖 ID 集合
+    sticker_set = [
+        {'package_id': '789', 'sticker_id': '10855'},   # 貼圖1
+        {'package_id': '789', 'sticker_id': '10856'},   # 貼圖2
+        {'package_id': '789', 'sticker_id': '10857'},   # 貼圖3
+        {'package_id': '789', 'sticker_id': '10858'},   # 貼圖4
+        {'package_id': '789', 'sticker_id': '10859'}    # 貼圖5
+    ]
+    # 隨機選擇一個貼圖
+    random_sticker = random.choice(sticker_set)
+    # 構建貼圖回應
+    reply = StickerSendMessage(
+        package_id=random_sticker['package_id'],
+        sticker_id=random_sticker['sticker_id']
+    )
 
     line_bot_api.reply_message(event.reply_token,reply)
     
