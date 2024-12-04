@@ -48,6 +48,16 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     user_message = event.message.text
+
+    # 預定義的貼圖 ID 集合
+    sticker_set = [
+        {'package_id': '789', 'sticker_id': '10855'},
+        {'package_id': '789', 'sticker_id': '10856'},
+        {'package_id': '789', 'sticker_id': '10857'},
+        {'package_id': '789', 'sticker_id': '10858'},
+        {'package_id': '789', 'sticker_id': '10859'}
+    ]
+    
     if user_message == "天氣":
         reply = TextSendMessage(text="請稍等，我幫您查詢天氣資訊！")
     
@@ -110,7 +120,12 @@ def handle_message(event):
       
     
     else:
-        reply = TextSendMessage(text="抱歉，沒有這類型的影片。")
+        # 如果輸入的訊息沒有匹配任何條件，回應隨機貼圖
+        random_sticker = random.choice(sticker_set)
+        reply = StickerSendMessage(
+            package_id=random_sticker['package_id'],
+            sticker_id=random_sticker['sticker_id']
+        )
 
     line_bot_api.reply_message(event.reply_token,reply)
     
