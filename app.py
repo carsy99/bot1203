@@ -100,12 +100,12 @@ def handle_message(event):
         )
 
     elif user_message == "今天是我的生日":
-    image_message = ImageSendMessage(
-        original_content_url="https://img.lovepik.com/free-template/20210106/bg/d4e0b6dd02a87.png_detail.jpg!detail808",
-        preview_image_url="https://img.lovepik.com/free-template/20210106/bg/d4e0b6dd02a87.png_detail.jpg!detail808"
-    )
-    text_message = TextSendMessage(text="生日快樂！希望你有個美好的一天 🎉🎂")
-    reply = [image_message, text_message]
+        image_message = ImageSendMessage(
+            original_content_url="https://img.lovepik.com/free-template/20210106/bg/d4e0b6dd02a87.png_detail.jpg!detail808",
+            preview_image_url="https://img.lovepik.com/free-template/20210106/bg/d4e0b6dd02a87.png_detail.jpg!detail808"
+        )
+        text_message = TextSendMessage(text="生日快樂！希望你有個美好的一天 🎉🎂")
+        reply = [image_message, text_message]
     
     else:
         reply = TextSendMessage(text="抱歉，沒有這類型的影片。")
