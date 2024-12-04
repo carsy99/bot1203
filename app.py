@@ -80,7 +80,7 @@ def handle_message(event):
         reply = AudioSendMessage(
             original_content_url="https://github.com/carsy99/bot1203/blob/master/Back_2_U_AM_01_27_%5B_YouConvert.net_%5D.mp3",  
             duration=235000  # 音訊時長 (毫秒)
-    
+        )
     else:
         reply = TextSendMessage(text="很抱歉，我目前無法理解這個內容。")
 
