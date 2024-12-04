@@ -11,6 +11,8 @@ from linebot.exceptions import (
 )
 from datetime import datetime
 import pytz
+import random
+
 from linebot.models import *
 import re
 app = Flask(__name__)
