@@ -81,8 +81,34 @@ def handle_message(event):
             original_content_url="https://drive.google.com/uc?export=download&id=1LgcJ2bjD8DFakbWY4w6wo8cKyXISuewG",  
             duration=235000  # 音訊時長 (毫秒)
         )
+     
+    # 新增影片類型處理
+    elif user_message == "動作片":
+        reply = VideoSendMessage(
+            original_content_url="https://campus-studio.com/download/cr.mp4",  # 替換為真實影片連結
+            preview_image_url="https://via.placeholder.com/300x200.png?text=MOVE"  # 替換為真實預覽圖連結
+        )
+    elif user_message == "動畫":
+        reply = VideoSendMessage(
+            original_content_url="https://example.com/animation_video.mp4",  # 替換為真實影片連結
+            preview_image_url="https://via.placeholder.com/300x200.png?text=anime"  # 替換為真實預覽圖連結
+        )
+    elif user_message == "紀錄片":
+        reply = VideoSendMessage(
+            original_content_url="https://samplelib.com/lib/preview/mp4/sample-5s.mp4",  # 替換為真實影片連結
+            preview_image_url="https://via.placeholder.com/300x200.png?text=Action+Movie"  # 替換為真實預覽圖連結
+        )
+
+    elif user_message == "今天是我的生日":
+    image_message = ImageSendMessage(
+        original_content_url="https://img.lovepik.com/free-template/20210106/bg/d4e0b6dd02a87.png_detail.jpg!detail808",
+        preview_image_url="https://img.lovepik.com/free-template/20210106/bg/d4e0b6dd02a87.png_detail.jpg!detail808"
+    )
+    text_message = TextSendMessage(text="生日快樂！希望你有個美好的一天 🎉🎂")
+    reply = [image_message, text_message]
+    
     else:
-        reply = TextSendMessage(text="很抱歉，我目前無法理解這個內容。")
+        reply = TextSendMessage(text="抱歉，沒有這類型的影片。")
 
     line_bot_api.reply_message(event.reply_token,reply)
     
