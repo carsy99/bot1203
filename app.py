@@ -73,12 +73,12 @@ def handle_message(event):
 
     elif user_message == "熱門音樂":  # 傳送熱門音樂音訊
         reply = AudioSendMessage(
-            original_content_url="https://drive.google.com/file/d/1J2MmpK7bb4S-HsHx4yC0YeAuoZQhnOag/view?usp=drive_link",  
+            original_content_url="https://drive.google.com/uc?export=download&id=1J2MmpK7bb4S-HsHx4yC0YeAuoZQhnOag",  
             duration=203000  # 音訊時長 (毫秒)
         )
     elif user_message == "放鬆音樂":  # 傳送放鬆音樂音訊
         reply = AudioSendMessage(
-            original_content_url="https://drive.google.com/file/d/1LgcJ2bjD8DFakbWY4w6wo8cKyXISuewG/view?usp=drive_link",  
+            original_content_url="https://drive.google.com/uc?export=download&id=1LgcJ2bjD8DFakbWY4w6wo8cKyXISuewG",  
             duration=235000  # 音訊時長 (毫秒)
         )
     else:
