@@ -70,7 +70,17 @@ def handle_message(event):
             latitude=25.033976,
             longitude=121.564538
         )
-        
+
+    elif user_message == "熱門音樂":  # 傳送熱門音樂音訊
+        reply = AudioSendMessage(
+            original_content_url="https://github.com/carsy99/bot1203/blob/master/Selfish_Waltz_%5B_YouConvert.net_%5D.mp3",  
+            duration=203000  # 音訊時長 (毫秒)
+        )
+    elif user_message == "放鬆音樂":  # 傳送放鬆音樂音訊
+        reply = AudioSendMessage(
+            original_content_url="https://github.com/carsy99/bot1203/blob/master/Back_2_U_AM_01_27_%5B_YouConvert.net_%5D.mp3",  
+            duration=235000  # 音訊時長 (毫秒)
+    
     else:
         reply = TextSendMessage(text="很抱歉，我目前無法理解這個內容。")
 
