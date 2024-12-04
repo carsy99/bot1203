@@ -85,18 +85,18 @@ def handle_message(event):
     # 新增影片類型處理
     elif user_message == "動作片":
         reply = VideoSendMessage(
-            original_content_url="https://campus-studio.com/download/cr.mp4",  # 替換為真實影片連結
-            preview_image_url="https://via.placeholder.com/300x200.png?text=MOVE"  # 替換為真實預覽圖連結
+            original_content_url="https://drive.google.com/file/d/1wfWeybmhT9HdX9Ygn1vknu54ia4rPBm5/view?usp=drive_link",  # 替換為真實影片連結
+            preview_image_url="https://img.pikbest.com/wp/202345/octopus-cartoon-an-image-of-a-swimming-with-large-eyes_9581639.jpg!w700wp"  # 替換為真實預覽圖連結
         )
     elif user_message == "動畫":
         reply = VideoSendMessage(
-            original_content_url="https://example.com/animation_video.mp4",  # 替換為真實影片連結
-            preview_image_url="https://via.placeholder.com/300x200.png?text=anime"  # 替換為真實預覽圖連結
+            original_content_url="https://drive.google.com/file/d/1JBIfjBjTmVYBwJ3X8JFFZVBpNLwvGs6o/view?usp=drive_link",  # 替換為真實影片連結
+            preview_image_url="https://pic.616pic.com/ys_bnew_img/00/16/62/0rWVcmU1fK.jpg"  # 替換為真實預覽圖連結
         )
     elif user_message == "紀錄片":
         reply = VideoSendMessage(
-            original_content_url="https://samplelib.com/lib/preview/mp4/sample-5s.mp4",  # 替換為真實影片連結
-            preview_image_url="https://via.placeholder.com/300x200.png?text=Action+Movie"  # 替換為真實預覽圖連結
+            original_content_url="https://drive.google.com/file/d/1krx3O0rgj7DKTg5pKKRmIFn4xo1Jro5V/view?usp=drive_link",  # 替換為真實影片連結
+            preview_image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL3K1L1IArBJSNdV7O27-oh-aB6vAylFy3zg&s"  # 替換為真實預覽圖連結
         )
 
     elif user_message == "今天是我的生日":
